@@ -40,6 +40,12 @@ body {
     position: relative;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
@@ -158,19 +164,19 @@ ul {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--branco);
+    display: flex;
+    align-items: center;
     transition: var(--transicao);
 }
 
-.header.scrolled .logo {
-    color: var(--marrom);
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: var(--transicao);
 }
 
-.logo span {
-    color: var(--dourado);
+.header.scrolled .logo-img {
+    height: 45px;
 }
 
 .nav-links {
@@ -957,10 +963,16 @@ ul {
 }
 
 .footer-brand .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
     color: var(--branco);
-    font-size: 32px;
     display: inline-block;
     margin-bottom: 20px;
+}
+
+.footer-brand .logo span {
+    color: var(--dourado);
 }
 
 .footer-brand p {
@@ -1057,6 +1069,10 @@ ul {
         padding: 70px 0;
     }
 
+    .container {
+        padding: 0 15px;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -1113,21 +1129,42 @@ ul {
         background: var(--marrom);
     }
 
+    .hero {
+        padding: 120px 0 80px;
+    }
+
     .hero-title {
         font-size: 38px;
+        padding: 0 10px;
     }
 
     .hero-text {
         font-size: 17px;
+        padding: 0 10px;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
     }
 
     .sobre-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sobre-image {
+        margin-bottom: 30px;
+    }
+
+    .image-frame img {
+        height: 350px;
     }
 
     .sobre-badge {
@@ -1137,6 +1174,7 @@ ul {
 
     .servicos-filtros {
         gap: 8px;
+        padding: 0 10px;
     }
 
     .filtro-btn {
@@ -1146,10 +1184,16 @@ ul {
 
     .servicos-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servico-card {
+        margin: 0 5px;
     }
 
     .contato-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .contato-agendamento {
@@ -1159,6 +1203,7 @@ ul {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 30px;
     }
 
     .social-links {
@@ -1171,6 +1216,24 @@ ul {
 
     .depoimento-text {
         font-size: 17px;
+    }
+
+    .faq-question {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .faq-answer p {
+        padding: 0 20px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 32px;
+        padding: 0 10px;
+    }
+
+    .cta-content p {
+        padding: 0 10px;
     }
 }
 
